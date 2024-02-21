@@ -7,4 +7,3 @@ website.
 
 Regarding directory structure, you will find a folder called 'Terraform' that contains the code to deploy all the infrastructure needed. Then, a folder called 'Ansible' which contains
 all the roles and tasks to configure Jenkins on the EC2 instance deployed with the Terraform code. And, finally you will find the source code of my portfolio website.
-
