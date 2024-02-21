@@ -25,4 +25,18 @@ resource "aws_instance" "jenkins-instance" {
       Project = simple-pipeline
       Origin = terraform
   }
+  provisioner "remote-exec" {
+    inline = [ "echo 'Wait until SSH is ready'"]
+
+    connection {
+      type = "ssh"
+      user = local.ssh_user
+      private_key = file(local.private_key_path)
+      host = aws_instance.jenkins.public_ip
+    }
+  }
+  provisioner "local-exec" {
+    command = "ansible-playbook -i ${aws_insatnce.jenkins.public.ip}, --private-key ${local.private_key_path} playbook.yml"
+    
+  }
 }
