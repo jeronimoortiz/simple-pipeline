@@ -10,6 +10,8 @@ all the roles and tasks to configure Jenkins on the EC2 instance deployed with t
 
 For the infrastructure I decided to go for a t2.micro EC2 instance with Amazon Linux 2, these 2 items are free tier eligible so you can try to deploy this on your own account for free. There are some keys with the value "placeholder", because there are placeholders for existing cloud resources (ex, VPC ID).
 
+AWS credentials are setup via CLI, and not hardcoded into the Terraform code.
+
 For configuration management I will use Ansible, and it will locally run the playbook for configuring Jenkins.
 
 Networking isn't the focus of this project, so I will try and be brief with it, but there are some requirements. You need to be able to access your instance via SSH
